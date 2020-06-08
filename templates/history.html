@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <form action="/history" method="post">
+        <h1>History</h1>
+        <h6>Hi {{ username }}. Here is your transaction history.</h6>
+        <table align="center" class= "table">
+            <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Bought/Sold</th>
+                <th>Date and Time</th>
+            </tr>
+            {% for row in transactions %}
+                <tr>
+                    <td>{{ row["symbol"] }}</td>
+                    <td>{{ row["price"] }}</td>
+                    <td>{{ row["shares"] }}</td>
+                    <td>{{ row["buy_sell"] }}</td>
+                    <td>{{ row["time"] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+        </table>
+    </form>
+{% endblock %}

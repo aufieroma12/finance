@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bought
+{% endblock %}
+
+{% block main %}
+    <form action="/bought" method="post">
+        <h1>Buy</h1>
+        <h6>Congratulations on your purchase, {{ username }}! Here is your transaction summary.</h6>
+        <table align="center" class= "table">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Total Price</th>
+                <th>Cash</th>
+            </tr>
+            <tr>
+                <td>{{ symbol }}</td>
+                <td>{{ name }}</td>
+                <td>{{ price }}</td>
+                <td>{{ shares }}</td>
+                <td>{{ total }}</td>
+                <td>{{ cash }}</td>
+            </tr>
+        </table>
+        <a class="nav-link" href="/buy">Buy Another Stock</a>
+    </form>
+{% endblock %}

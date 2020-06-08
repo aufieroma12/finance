@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sold
+{% endblock %}
+
+{% block main %}
+    <form action="/sold" method="post">
+        <h1>Sell</h1>
+        <h6>Congratulations on selling {{ shares }} {{ plural }} of {{ symbol }}, {{ username }}! Here is your transaction summary.</h6>
+        <table align="center" class= "table">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Total Price</th>
+                <th>Cash</th>
+            </tr>
+            <tr>
+                <td>{{ symbol }}</td>
+                <td>{{ name }}</td>
+                <td>{{ price }}</td>
+                <td>{{ shares }}</td>
+                <td>{{ total }}</td>
+                <td>{{ cash }}</td>
+            </tr>
+        </table>
+        <a class="nav-link" href="/sell">Sell Another Stock</a>
+    </form>
+{% endblock %}

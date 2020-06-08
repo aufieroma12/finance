@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quotef
+{% endblock %}
+
+{% block main %}
+    <form action="/quotef" method="post">
+        <h1>Quote</h1>
+        <p text-align= "center">Symbol Not Found</p>
+        <a class="nav-link" href="/quote">Try Again</a>
+    </form>
+{% endblock %}

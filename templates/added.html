@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Added
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <h1>Add</h1>
+        <h6>Congratulations on adding {{ amount }} to your account, {{ username }}! Here is your current balance.</h6>
+        <h3>{{ cash }}</h3>
+        <a class="nav-link" href="/add">Add More Cash</a>
+    </form>
+{% endblock %}

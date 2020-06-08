@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <h1>Index</h1>
+        <h6>Hi {{ username }}. Here are your assets.</h6>
+        <table align="center" class= "table">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Total Value</th>
+            </tr>
+            {% for row in table %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+
+            </tr>
+            <tr class= "cash">
+                <td>Cash:</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr class= "total">
+                <td>Total Assets:</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ total_assets }}</td>
+            </tr>
+            </table>
+    </form>
+{% endblock %}
